@@ -1,0 +1,48 @@
+{
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("КАЛКУЛАТАРРРРР 2 числа без выебонов a XXXоперацияXXX b");
+        String a = in.nextLine();
+        String pattern = "\\d+";
+        boolean ka = a.matches(pattern);
+        if (!ka) {
+            System.out.println("Первое число ушло нахуй...");
+            System.exit(0);
+        }
+        char sym = in.next().charAt(0);
+        if (sym !='+' && sym !='-' && sym!='/' && sym!='*'){
+
+                        System.out.println("Операция неверная наверное");
+                        System.exit(0);
+                    }
+        String b = in.next();
+        ka = b.matches(pattern);
+        if (!ka){
+            System.out.println("Второе число не число");
+            System.exit(0);
+        }
+        double a1= Double.parseDouble(a);
+        double b2= Double.parseDouble(b);
+        double c = 0;
+        switch(sym){
+            case '+':
+                c = a1+b2;
+                break;
+            case '-':
+                c = a1-b2;
+                break;
+            case '/':
+                c = a1/b2;
+                break;
+            case '*':
+                c = a1*b2;
+                break;
+
+        }
+
+        System.out.println(c); //почти умер но еще еле живой
+
+    }
+
+}
